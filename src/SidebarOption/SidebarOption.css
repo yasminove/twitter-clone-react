@@ -1,0 +1,29 @@
+
+
+.sidebarOption__icon {
+    padding: 10px;
+}
+
+.sidebarOption:hover {
+    color: var(--twitter-color);
+    background-color: #e3f4ff;
+    /* background-color: #d2e9f7; */
+    border-radius: 50px;
+}
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.sidebarOption__active {
+    color: var(--twitter-color);
+}
+
+.sidebarOption > h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
