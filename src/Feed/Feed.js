@@ -1,45 +1,16 @@
-import React from 'react'; 
-import Home from '../Home/Home'
-import TweetBox from '../TweetBox/TweetBox'
-import './Feed.css'
+import React from 'react';
+import Home from '../Home/Home';
+import TweetBox from '../TweetBox/TweetBox';
+import './Feed.css';
+import Tweet from '../Tweet/Tweet';
 const Feed = () => {
-    return (
-        <div className="feed">
-            <Home />
-            <TweetBox />
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-            <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             {/* <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2>
-             <h2>Feed</h2> */}
-        </div>
-       
-    )
-}
+  return (
+    <div className='feed'>
+      <Home />
+      <TweetBox />
+      <Tweet />
+    </div>
+  );
+};
 
 export default Feed;
