@@ -18,7 +18,7 @@
 }
 
 .tweet__image {
-    /* padding: 10px; */
+    border-radius: 11px;
 }
 
 .tweet__displayName {
