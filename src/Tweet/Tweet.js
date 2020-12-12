@@ -9,19 +9,19 @@ const Tweet = () => {
         <div className="tweet">
             <div className="tweet__header">
             <Avatar  className="tweet__image" src={Image} />
-            <h2>Yasmin Hillis
-                <span>@yasminhillis</span>
-            </h2>
-
             </div>
 
             
             <div className="tweet__text">
+            <h2 className="tweet__displayName">Yasmin Hillis
+                <span className="tweet__username">@yasminhillis</span>
+            </h2>
                 <p>This is my first tweet</p>
+                <img className="tweet__image" style={{width: '201px', height: '175px'}} src={Person} />
+
             </div>
-            <div className="tweet__image">
-                <img style={{width: '201px', height: '175px'}} src={Person} />
-            </div>
+       
+          
         </div>
         
     )
