@@ -1,0 +1,14 @@
+.tweet {
+    border-bottom: 1px solid var(--twitter-background); 
+    padding-bottom: 10px;
+    /* padding: 10px; */
+}
+
+.tweet__header {
+    display: flex;
+    align-content: center;
+}
+
+.tweet__image {
+    /* padding: 10px; */
+}
