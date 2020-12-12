@@ -12,7 +12,7 @@ const TweetBox = () => {
           <input type='text' placeholder="What's happening" />
           
         </div>
-        <input className="tweetBox__image" type='text' placeholder="Optional: Add an image" />
+        {/* <input className="tweetBox__image" type='text' placeholder="Optional: Add an image" /> */}
         <Button className='tweetBox_btn' variant='contained'>
           Tweet
         </Button>
