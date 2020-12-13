@@ -8,10 +8,9 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PublishIcon from '@material-ui/icons/Publish';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-import Image from '../images/yasmin.jpeg'
 import Person from '../images/person.jpg'
 
-const Tweet = () => {
+const Tweet = ({ profilePic, displayName, username, text, image }) => {
     const [ heartConut, setHeartConut ] = useState(0); 
     
     const handleHeartClick = () => {
@@ -27,16 +26,17 @@ const Tweet = () => {
         <div className="tweet">
             <div className="tweet__wrapper">
             <div className="tweet__header">
-            <Avatar  className="tweet__image" src={Image} />
+            <Avatar  className="tweet__image" src={profilePic} />
             </div>
 
             
             <div className="tweet__text">
-            <h2 className="tweet__displayName">Yasmin Hillis
-                <span className="tweet__username">@yasminhillis</span>
+            <h2 className="tweet__displayName">{displayName}
+                <span className="tweet__username">@{username}</span>
             </h2>
-                <p>This is my first tweet</p>
-                <img className="tweet__image" style={{width: '201px', height: '175px'}} src={Person} />
+                <p>{text}</p>
+
+                <img className="tweet__image" style={{width: '201px', height: '175px'}} src={image} />
 
             </div>
             </div>
