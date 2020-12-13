@@ -9,6 +9,10 @@ const Feed = () => {
       <Home />
       <TweetBox />
       <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
     </div>
   );
 };
