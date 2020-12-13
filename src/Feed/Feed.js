@@ -54,14 +54,7 @@ const Feed = () =>  {
            username={post.username}
            text={post.text}
            image={post.image}
-         />
-
-         <Tweet
-           profilePic={post.profilePic}
-           displayName={post.displayName}
-           username={post.username}
-           text={post.text}
-         
+           heartCount={post.heart}
          />
          </>
 
