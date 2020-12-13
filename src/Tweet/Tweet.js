@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState, forwardRef } from 'react'; 
 import './Tweet.css'
 import { Avatar } from '@material-ui/core'
 
@@ -13,25 +13,28 @@ import  {docId}  from '../TweetBox/TweetBox'
 
 import Person from '../images/person.jpg'
 
-const Tweet = ({ profilePic, displayName, username, text, image, heartCount }) => {
+const Tweet = forwardRef(({ profilePic, displayName, username, text, image, heartCount }, ref) => {
     const [ heartConut, setHeartConut ] = useState(0); 
     
     const handleHeartClick = () => {
         console.log(docId, 'docId');
+        if(docId){
+            setHeartConut(heartConut + 1);
+            // const doc = db.collection("posts").doc(docId);
+            // console.log(doc, 'doc777777');
+            // console.log(doc.id, 'doc777777');
+            const doc = db.collection('posts').doc(docId);
+            // console.log(heartConut, 'heartConut');
+            console.log(heartConut, 'heartConutttttttttttttttttttt');
+            doc.update({
+              heart: heartConut + 1
+            });
+            console.log(doc, 'doc'); 
+        } else {
+            setHeartConut(heartConut + 1);
+        }
         
-        setHeartConut(heartConut + 1)
-        // const doc = db.collection("posts").doc(docId); 
-        // console.log(doc, 'doc777777');
-        // console.log(doc.id, 'doc777777');
-        const doc = db.collection('posts').doc(docId);
-        // console.log(heartConut, 'heartConut');
-        console.log(heartConut, 'heartConutttttttttttttttttttt');
-        doc.update({
-            heart: heartConut + 1,
-            displayName: "The GREAT"
-
-        })    
-        console.log(doc, 'doc');    
+           
     }
 
     // console.log(heartConut, 'heartConutheartConutheartConutheartConutheartConut');
@@ -42,7 +45,7 @@ const Tweet = ({ profilePic, displayName, username, text, image, heartCount }) =
 
     console.log(heartConut, 'heartConut');
     return (
-        <div className="tweet">
+        <div className="tweet" ref={ref}>
             <div className="tweet__wrapper">
             <div className="tweet__header">
             <Avatar  className="tweet__image" src={profilePic} />
@@ -67,6 +70,8 @@ const Tweet = ({ profilePic, displayName, username, text, image, heartCount }) =
             <RepeatIcon />
             { heartConut === 0 || heartConut % 2 === 0 ? <FavoriteBorderIcon onClick={handleHeartClick}/> :  <FavoriteIcon onClick={handleFilledHeartClick} style={{color: '#e0245e'}}/>}
             { heartConut > 0 ?  <span style={{marginLeft: '-107px'}}>{heartCount}</span> : null}
+
+            {  heartConut >= 1000 ?  <span style={{marginLeft: '-107px'}}>{heartCount/1000}</span> : null }
             <PublishIcon />
 
             </div>
@@ -75,6 +80,6 @@ const Tweet = ({ profilePic, displayName, username, text, image, heartCount }) =
         </div>
         
     )
-}
+})
 
 export default Tweet;
