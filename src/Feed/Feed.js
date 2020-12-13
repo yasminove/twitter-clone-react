@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import Home from '../Home/Home';
 import TweetBox from '../TweetBox/TweetBox';
 import './Feed.css';
-
+import FilpMove from 'react-flip-move'
 import db from '../firbase'
  
 import Image from '../images/yasmin.jpeg';
@@ -48,7 +48,9 @@ const Feed = () =>  {
        
         {posts.map(post => (
           <>
+          <FilpMove>
            <Tweet
+           key={post.text}
            profilePic={post.profilePic}
            displayName={post.displayName}
            username={post.username}
@@ -56,8 +58,9 @@ const Feed = () =>  {
            image={post.image}
            heartCount={post.heart}
          />
+        
+         </FilpMove>
          </>
-
         ))}
         {/* <Tweet />
         <Tweet />
